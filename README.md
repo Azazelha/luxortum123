@@ -198,3 +198,102 @@ const playSound = (sound) => {
   audio.play();
 }; 
 
+npm install framer-motion
+
+import { motion } from 'framer-motion';
+
+export default function StageDisplay({ phase, stageIndex }) {
+  return (
+    <motion.div
+      key={stageIndex}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2>{phase.name}</h2>
+      <p>{phase.stages[stageIndex]}</p>
+    </motion.div>
+  );
+}
+
+import { motion } from 'framer-motion';
+
+export default function StageDisplay({ phase, stageIndex }) {
+  return (
+    <motion.div
+      key={stageIndex}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2>{phase.name}</h2>
+      <p>{phase.stages[stageIndex]}</p>
+    </motion.div>
+  );
+const playSound = (sound) => {
+  const audio = new Audio(`/sounds/${sound}.mp3`);
+  audio.play();
+};
+npm install react-json-editor-ajrm
+
+import JSONInput from 'react-json-editor-ajrm';
+import locale from 'react-json-editor-ajrm/locale/en';
+
+export default function RitualEditor({ data, onChange }) {
+  return (
+    <JSONInput
+      id='ritual_editor'
+      placeholder={data}
+      locale={locale}
+      height='400px'
+      width='100%'
+      onChange={(e) => {
+        if (!e.error) onChange(e.jsObject);
+      }}
+    />
+  );
+}
+import Link from 'next/link';
+
+export default function RitualSelection() {
+  return (
+    <div>
+      <h1>Оберіть ритуал</h1>
+      <ul>
+        <li><Link href="/rituals/cleansing">Очищення</Link></li>
+        <li><Link href="/rituals/protection">Захист</Link></li>
+      </ul>
+    </div>
+  );
+}
+
+npm install framer-motion
+
+// components/StageDisplay.js
+import { motion } from 'framer-motion';
+
+export default function StageDisplay({ phase, stageIndex }) {
+  return (
+    <motion.div
+      key={stageIndex}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.5 }}
+      style={{ margin: '2rem 0', padding: '1rem', border: '1px solid #ccc', borderRadius: '10px' }}
+    >
+      <h2>{phase.name}</h2>
+      <p>{phase.stages[stageIndex]}</p>
+    </motion.div>
+  );
+}
+
+const playSound = (sound) => {
+  const audio = new Audio(`/sounds/${sound}.mp3`);
+  audio.play();
+};
+
+
+
