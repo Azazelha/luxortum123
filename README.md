@@ -295,5 +295,16 @@ const playSound = (sound) => {
   audio.play();
 };
 
+// vercel.json
+{
+  "version": 2,
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
+
 
 
