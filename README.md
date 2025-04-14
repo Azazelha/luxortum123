@@ -1,2 +1,31 @@
-# luxortum123
-Intention-based ritual UI with Next.js
+/components
+  └── RitualIntentForm.js     # форма вибору наміру
+  └── PhaseNavigator.js       # логіка фази ритуалу
+  └── StageDisplay.js         # показ поточного етапу
+
+/pages
+  └── index.js                # домашня, вибір наміру
+  └── ritual.js               # основна послідовність ритуалу
+
+/lib
+  └── ritualData.js           # структура фаз, етапів
+
+/styles
+  └── ritual.css              # стилі для ритуального UI
+export const ritual = {
+  intent: "Очистити простір від хаосу",
+  phases: [
+    {
+      name: "Підготовка",
+      stages: ["Очищення простору", "Медитація", "Встановлення кола"]
+    },
+    {
+      name: "Активація",
+      stages: ["Виголошення наміру", "Активація символу", "Візуалізація результату"]
+    },
+    {
+      name: "Завершення",
+      stages: ["Подяка", "Закриття кола", "Запис у щоденник"]
+    }
+  ]
+};
